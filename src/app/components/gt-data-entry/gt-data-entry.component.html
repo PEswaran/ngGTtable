@@ -1,0 +1,81 @@
+
+
+<div *ngIf="hero">
+    <div class="card">
+        <span class="text-white bg-info">
+            
+                <button type="button" class="btn btn-primary btn-xs pull-right" (click)="checkStatus()"><i class="fa fa-edit"></i></button>              
+                
+               <span class="edit-header" *ngIf="!readOnly">Editing Row # {{rowId}}</span>
+               <span class="edit-header" *ngIf="readOnly"> Read-Only</span>
+        </span>
+        <div class="card-body">
+
+            <form id="signupform" class="form-horizontal" role="form">
+                <fieldset [disabled]="readOnly">
+             
+        
+                <div class="form-group row">
+                   
+                    <label for="time" class="col-md-6 control-label">Time</label>
+                    <div class="col-md-4">
+                        <input type="number" class="form-control" name="time" [(ngModel)]="hero.time">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="flow" class="col-md-6 control-label">Flow Rate</label>
+                    <div class="col-md-4">
+                        <input type="number" class="form-control" name="flow"  [(ngModel)]="hero.flow">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="compA" class="col-md-6 control-label">Composition A</label>
+                    <div class="col-md-4">
+                        <input type="number" class="form-control" name="compA"  [(ngModel)]="hero.compA">
+                    </div>
+                </div>
+        
+                <div class="form-group row">
+                    <label for="compB" class="col-md-6 control-label">Composition B</label>
+                    <div class="col-md-4">
+                        <input type="number" class="form-control" name="compB" [(ngModel)]="hero.compB">
+                    </div>
+                </div>
+  
+                <div class="form-group row">
+                    <label for="compC" class="col-md-6 control-label">Composition C</label>
+                    <div class="col-md-4">
+                        <input type="number" class="form-control" name="compC" [(ngModel)]="hero.compC">
+                    </div>
+                </div>
+  
+                <div class="form-group row">
+                    <label for="compD" class="col-md-6 control-label">Composition D</label>
+                    <div class="col-md-4">
+                        <input type="number" class="form-control" name="compD" [(ngModel)]="hero.compD">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="curve" class="col-md-6 control-label">Curve</label>
+                    <div class="col-md-4">
+                        <input type="number" class="form-control" name="curve" [(ngModel)]="hero.curve">
+                    </div>
+                </div>
+                <div style="margin-top:10px" class="form-group">
+                  <!-- Button -->
+        
+                  <div class="col-sm-12 controls">
+                    <a id="btn-login" href="#" class="btn btn-success">Submit </a>
+                    <a id="btn-fblogin" href="#" class="btn btn-danger">Revert</a>
+        
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+        </div>
+    </div>
+  
+  </div>
+
+  
+  

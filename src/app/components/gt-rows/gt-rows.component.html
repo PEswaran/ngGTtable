@@ -1,0 +1,55 @@
+<div 
+     fxLayout
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap.xs="0" >
+  <div fxFlex fxFlexOffset.xs="0">
+      <table id="mytable" class="table table-bordered table-striped">
+          <thead class="text-white bg-info small">
+            <th>ID</th>
+           
+            <th>Time</th>
+            <th>FLow-Rate</th>
+            <th>Component A</th>
+            <th>Component B</th>
+            <th>Component C</th>
+            <th>Component D</th>
+            <th>Curve</th>
+            <th></th>
+          </thead>
+          <tbody>
+        {{index}}
+            <tr *ngFor="let hero of heroes; let row_no = index"
+            [class.selected]="hero === selectedHero"
+            (click)="onSelect(hero, row_no+1)">          
+              <td >{{row_no +1 }}</td>
+              <td>{{hero.time}}</td>
+              <td>{{hero.flow}}</td>
+              <td>{{hero.compA}}</td>
+              <td>{{hero.compB}}</td>
+              <td>{{hero.compC}}</td>
+              <td>{{hero.compD}}</td>
+              <td>{{hero.curve}}</td>
+             
+              <td class="text-center">
+                  <button class="btn btn-danger btn-sm" (click)="delete(hero)">
+                    <i class="fa fa-times-circle"></i>
+                  </button>
+             </td>
+            </tr>
+            <tr>
+                <button class="btn btn-success btn-xs" (click)="add(hero)">
+                    <span>Add New Row</span>
+                  </button>
+            </tr>
+          </tbody>
+        </table>
+       
+       
+    </div>
+
+    <div fxFlex="25%">
+      <app-gt-data-entry [hero]="selectedHero" [rowId]="rowNumber"></app-gt-data-entry>
+      </div>
+      </div>
+
